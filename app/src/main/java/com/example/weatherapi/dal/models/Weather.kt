@@ -1,5 +1,7 @@
 package com.example.weatherapi.dal.models
 
+import java.io.Serializable
+
 data class Weather(
     val base: String,
     val clouds: Clouds,
@@ -14,4 +16,8 @@ data class Weather(
     val visibility: Int,
     val weather: List<WeatherX>,
     val wind: Wind
-)
+): Serializable {
+    override fun toString(): String {
+        return "$name this is the name"
+    }
+}

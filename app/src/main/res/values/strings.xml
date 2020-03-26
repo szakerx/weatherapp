@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">WeatherAPI</string>
+    <string name="app_name">WeatherApi</string>
+    <string name="cityHint">City name…</string>
+    <string name="confirm_button">Check weather</string>
 </resources>

@@ -1,13 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.response.Response">
-    
-    <TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#D6DBE8">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
-
-</FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        
+        <LinearLayout
+            android:id="@+id/response_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:paddingHorizontal="20dp">
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/response_city_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/abril_fatface"
+                    android:text="City"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/response_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/belgrano"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            
+            <ImageView
+                android:id="@+id/response_weather_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/response_temperature_pressure_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="35dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/response_name_layout">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/belgrano"
+                    android:text="Temeprature:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/response_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/belgrano"
+                    android:text="XXX:"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/belgrano"
+                    android:text="Pressure:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/respone_pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/belgrano"
+                    android:text="XXX:"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/response_sun_rise_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginVertical="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/response_temperature_pressure_layout">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/belgrano"
+                    android:text="Sunrise:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/response_sunrise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/belgrano"
+                    android:text="XXX:"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/belgrano"
+                    android:text="Sunset:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/response_sunset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/belgrano"
+                    android:text="XXX:"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:layout_marginVertical="30dp"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/response_sun_rise_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/response_dateAndTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/belgrano"
+                android:text="Date and time:"
+                
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/response_sun_rise_layout" />
+            
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/response_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/belgrano"
+                
+                android:text="XXX:"
+                
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/response_dateAndTimeText" />
+        </LinearLayout>
+    
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
